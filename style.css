@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#grid-container {
+  margin: 100px;
+  display: grid;
+  width: 80vw;
+  height: 60vh;
+  /* set values: px responsive values: %, fr */
+  grid-template-columns: repeat(5, 1fr) 3fr;
+  /* grid-template-rows: repeat(5, 1fr) 3fr; */
+  gap: 10px;
+}
+
+div {
+  background-color: blue;
+  color: whitesmoke;
+  text-align: center;
+  font-size: 40px;
+}
+
+#box1 {
+  background-color: red;
+  grid-column-start: 4;
+  grid-column-end: 7;
+  grid-row-start: 3;
+  z-index: 1;
+}
+
+#box2 {
+  background-color: green;
+  /* CSS for row placement */
+  /* grid-row-start: 2;
+  grid-row-end: span 2; */
+
+  /* row-shorthand (combines grid-row-start and grid-row-end)*/
+  /* grid-row: 2 / 4; */
+
+  /* CSS for column placement  */
+  /* grid-column-start: 2;
+  grid-column-end: 4; */
+
+  /* column-shorthand (combines grid-column-start and grid-column-end) */
+  /* grid-column: 2 / 4; */
+
+  /* row + column shorthand (combines grid-row-start, column-row-start, grid-row-end, column-row-end) */
+  grid-area: 2 / 2 / span 3 / span 3;
+}
